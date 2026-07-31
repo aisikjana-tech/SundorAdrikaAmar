@@ -615,7 +615,10 @@
     transition: opacity 0.9s ease, transform 0.9s ease;
   }
   .closing-name{
-    font-family: var(--font-mono); font-size:11px; letter-spacing:0.06em; color: var(--dim); margin-top:2px;
+    font-family: var(--font-cursive); font-weight:600;
+    font-size: clamp(26px, 4vw, 34px);
+    letter-spacing:0.02em; color: var(--rose-soft); margin-top:6px;
+    text-shadow: 0 0 20px var(--glow);
   }
 
   .closing-date{
@@ -1493,9 +1496,8 @@
         <div class="closing-signoff">
           <div class="signoff-line"></div>
           <span class="signoff-text">always.</span>
-          <span class="closing-name">— [Your Name]</span>
+          <span class="closing-name">— Babai 🤍</span>
         </div>
-        <p class="closing-date" id="closing-date"></p>
       </section>
     </div>
 
@@ -2304,9 +2306,6 @@
   }, {passive:true});
 
   /* ---------- Closing scene ---------- */
-  const closingDate = document.getElementById('closing-date');
-  closingDate.textContent = 'Opened ' + new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
-
   const closingSection = document.getElementById('closing-section');
   const closingObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -2728,7 +2727,15 @@
   // TODO: add a photo for each entry, in order (Entry 01 → Entry 07).
   // Each "src" should point to an image file placed next to this HTML file,
   // e.g. "school.jpg". Leave "" to keep showing the placeholder.
-  const storyPhotos = ['', '', '', '', '', '', ''];
+  const storyPhotos = [
+    'school(memory).jpeg',
+    'friend(memory).jpeg',
+    'bestfriend(memory).jpeg',
+    'relationship(memory).jpeg',
+    'firstdate(memory).jpeg',
+    'firstsmalltrip(memory).jpeg',
+    'forever(memory).jpeg'
+  ];
 
   const storyModal = document.getElementById('story-modal');
   const storyModalPhoto = document.getElementById('story-modal-photo');
